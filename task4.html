@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Глушенок Анна</title>
+</head>
+<body>
+<style>
+    table {
+        border-collapse: collapse;
+    }
+
+    td {
+        padding: 10px 10px;
+        border: 1px solid black;
+    }
+</style>
+<script>
+    let number = 1, row;
+    let table = document.createElement('table');
+
+    document.body.appendChild(table);
+
+    for (let i = 0; i < 10; i++) {
+        row = document.createElement('tr');
+        for (let j = 0; j < 10; j++) {
+            let t = document.createElement('td')
+            t.textContent = +number++;
+            row.appendChild(t);
+        }
+        table.appendChild(row);
+    }
+    for (let i = 0; i < 14; i++)
+        number * (number + 1) / 2 == number;
+</script>
+</body>
+</html>
