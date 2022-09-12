@@ -7,13 +7,13 @@
 <body>
 <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script>
-    let x = prompt("Введите x");
-    if (x >= -5 && x !=0)
-        document.write("x = " + x + "$$y=\\frac{1}{x}=\\frac{1}{" + x + "}={" + (1 / x).toFixed(4) + "}$$");
-    else if (x <= -10)
-        document.write("x = " + x + "$$y=x^2=(" + x + ")^2=" + (x * x).toFixed(4) + "$$");
+    let x = +prompt("Введите x");
+    if (x > 5 && x !== 20)
+        document.write(`$$y=x^3=${x}^3=${Math.pow(x, 3)}$$`);
+    else if (x >= -5 && x <= 5)
+        document.write(`$$y=x^2=${x}^2=${Math.pow(x, 2)}$$`);
     else
-        document.write("x = " + x + "$$y=\\sqrt{|x+1|}=\\sqrt{|" + x + "+1|}=" + Math.sqrt(Math.abs(x + 1)).toFixed(4) + "$$");
+        document.write(`$$y=lg|x|=lg|${x}|=${Math.log10(Math.abs(x))}$$`);
 </script>
 </body>
 </html>

@@ -3,18 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <title>Глушенок Анна</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        td {
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            border: 1px solid black;
+        }
+
+        td:hover {
+            background: #bbb;
+        }
+
+        .red {
+            color: red;
+        }
+    </style>
 </head>
 <body>
-<style>
-    table {
-        border-collapse: collapse;
-    }
 
-    td {
-        padding: 10px 10px;
-        border: 1px solid black;
-    }
-</style>
 <script>
     let number = 1, row;
     let table = document.createElement('table');
@@ -25,13 +40,22 @@
         row = document.createElement('tr');
         for (let j = 0; j < 10; j++) {
             let t = document.createElement('td')
-            t.textContent = +number++;
+            t.setAttribute("data-num", number)
+            t.textContent = number++;
+            t.onmouseenter = (e) => {
+                debugger
+                e.target.style.background = '#' + parseInt(Math.random() * 0xFFFFFF, 16);
+            }
             row.appendChild(t);
         }
         table.appendChild(row);
     }
-    for (let i = 0; i < 14; i++)
-        number * (number + 1) / 2 == number;
+
+    for (let i = 1; i < 14; i++) {
+        let num = i * (i + 1) / 2;
+        let td = table.querySelector(`td[data-num="${num}"]`)
+        td.classList.add("red")
+    }
 </script>
 </body>
 </html>

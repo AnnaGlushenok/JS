@@ -6,14 +6,13 @@
 </head>
 <body>
 <script>
-    let prev, sum = 0, n = 0, x = prompt("Введите x");
-    document.write("Math = " + Math.log((x + 1) / (x - 1)))
+    let sum = 0, n = 0, x = +prompt("Введите x");
+    let end = +prompt("Введите n");
+    document.write("Math = " + Math.log1p(x))
     do {
-        prev = sum;
-        sum += 2 / ((2 * n + 1) * x ** (2 * n + 1))
+        sum += Math.pow(-1, n) * Math.pow(x, n + 1) / (n + 1)
         n++;
-        document.write(prev - sum)
-    } while (Math.abs(prev - sum >= 0.001))
+    } while (n < end)
     document.write("<br>do...while = " + sum)
 </script>
 </body>
