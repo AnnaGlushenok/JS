@@ -5,25 +5,15 @@
     <title>Глушенок Анна</title>
 </head>
 <body>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script>
-    let x = +prompt("Введите x");
-    try {
-        debugger
-        switch (true) {
-            case (x > 5 && x !== 20):
-                document.write(`$$y=x^3=${x}^3=${Math.pow(x, 3)}$$`);
-                break;
-            case (x >= -5 && x <= 5):
-                document.write(`$$y=x^2=${x}^2=${Math.pow(x, 2)}$$`);
-                break;
-            default:
-                document.write(`$$y=lg|x|=lg|${x}|=${Math.log10(Math.abs(x))}$$`);
-                break;
-        }
-    } catch (e) {
-        console.log(e.message)
+    function ln(n, x, sum = 0) {
+        sum += Math.pow(-1, n) * Math.pow(x, n + 1) / (n + 1)
+        if (n > 0)
+            return ln(n - 1, x, sum)
+        return sum;
     }
+
+    document.write("ln=" + ln(+prompt("Введите n"), +prompt("Введите x")))
 </script>
 </body>
 </html>

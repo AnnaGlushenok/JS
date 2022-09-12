@@ -1,24 +1,19 @@
 <!DOCTYPE html>
-<html lang=lang>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Глушенок Анна</title>
 </head>
 <body>
 <script>
-    let lang = prompt("Введите язык");
-    let answer;
-    if (lang == "ru")
-        answer = "русский";
-    else if (lang == "en")
-        answer = "английский";
-    else if (lang == "fr")
-        answer = "французский";
-    else if (lang == "de")
-        answer = "немецкий";
-    else
-        answer = "Неопознанный   язык";
-    alert(answer);
+    function WeekDay(size, day, color) {
+        document.write(`<p style="font-size: ${size}px;color: ${color}">${day}</p>`)
+    }
+
+    const week = ["понедельник", "вторник", "среда ", "четверг", "пятница", "суббота", "воскресенье"];
+    const colors = ["#FF00FF", "#9400D3", "#008000", "#4682B4", "#1E90FF", "#F4A460", "#D2691E", "#66CCCC", "#FF9999", "#FF9999"]
+    for (let i = 0; i < 7; i++)
+        WeekDay(50 - i * 5, week[i], colors[Math.round(Math.random() * colors.length - 1)])
 </script>
 </body>
 </html>
