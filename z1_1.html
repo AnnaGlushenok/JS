@@ -35,26 +35,35 @@
 <body>
 </body>
 <div>
+    <p class="withoutMargin">ООО "Евроторг"</p>
+    <p class="bigBoldText withoutMargin alignCenter">Спасибо за покупку!</p>
+    <p class="withoutMargin">Дата покупки: <span id="dateTime"></span></p>
+    <p>Наименование товара <br> 1 = <span id="firstCost"></span></p>
+    <p>Наименование товара <br> 1 = <span id="secondCost"></span></p>
+    <p class="bigBoldText withoutMargin topMargin">ИТОГО<br></p>
+    <p class="bigBoldText withoutMargin alignCenter"><span id="sum"></span>BYN<br></p>
+    <p class='withoutMargin'>Ваша скидка: <span id="discount"></span>%<br></p>
+    <p class='withoutMargin discountSum alignCenter'><span id="discountSum"></span>BYN<br></p>
+    <p class="bigBoldText withoutMargin">СУММА СО СКИДКОЙ</p>
+    <p class="bigBoldText withoutMargin alignCenter"><span id="result"></span></p>
+</div>
+<div>
     <script>
         let firstCost = prompt("Введите стоимость");
         let secondCost = prompt("Введите стоимость");
         let discount = prompt("Введите скидку");
 
-        document.write("ООО \"Евроторг\"");
-        document.write('<p class="bigBoldText withoutMargin alignCenter">Спасибо за покупку!</p>');
-        document.writeln('<p class="withoutMargin">Дата покупки: ' + new Date().toLocaleDateString() +
-            ' ' + new Date().toLocaleTimeString() + '<br><br></p>');
-        document.write("Наименование товара <br> 1 = " + firstCost);
-        document.writeln("<br>Наименование товара<br>1 = " + secondCost);
-        document.write('<br><p class="bigBoldText withoutMargin topMargin">ИТОГО<br></p>')
+        document.getElementById("dateTime").innerText = new Date().toLocaleString();
+        document.getElementById("firstCost").innerText = firstCost;
+        document.getElementById("secondCost").innerText = secondCost;
 
         let sum = +firstCost + +secondCost;
         let discountSum = sum * discount / 100;
 
-        document.write('<p class="bigBoldText withoutMargin alignCenter">' + sum.toFixed(2) + 'BYN<br></p>');
-        document.write("<p class='withoutMargin'>Ваша скидка: " + discount + "%<br></p><p class='withoutMargin discountSum alignCenter'>" + discountSum.toFixed(2) + "BYN<br></p>");
-        document.write('<p class="bigBoldText withoutMargin">СУММА СО СКИДКОЙ</p>');
-        document.write('<p class="bigBoldText withoutMargin alignCenter">' + (sum - discountSum).toFixed(2) + 'BYN</p>');
+        document.getElementById("sum").innerText = sum.toFixed(2);
+        document.getElementById("discount").innerText = discount;
+        document.getElementById("discountSum").innerText = discountSum.toFixed(2);
+        document.getElementById("result").innerText = (sum - discountSum).toFixed(2);
     </script>
 </div>
 </html>

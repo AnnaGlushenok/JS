@@ -8,18 +8,20 @@
 <body>
 <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script>
-    let r = prompt("Введите радиус");
+    let a = prompt("Введите ускорение a");
+    let t = prompt("Введите время t");
     let x = prompt("Введите x")
     let y = prompt("Введите y")
     let z = prompt("Введите z")
-    let b = (1 + Math.pow(Math.cos(+x + +z), 2)) / Math.abs(Math.pow(+x, 3) - 2 * y * y)
-    document.write("Найти площадь круга и длину окружности радиуса r по формулам:<br> $$S=\\pi*r^2$$ $$l = 2\\pi r$$")
-    document.writeln("Радиус = " + r + "<br>");
-    document.writeln("Площадь круга = " + (Math.PI * r ** 2).toFixed(4) + "<br>");
-    document.writeln("Длина окружности = " + (2 * Math.PI * r).toFixed(4) + "<br>");
-    document.write("Найти значение выражения:<br> $$b=\\frac{1+cos^2(x+z)}{|x^3-2y^2|}$$")
-    document.writeln("При x = " + x + " y = " + y + " z = " + z + "<br>");
-    document.writeln("b = " + b.toFixed(4));
+    let b = Math.sqrt(x + Math.pow(Math.abs(y), 1 / 4)) + Math.cos(z) ** 2
+    document.write("Скорость в конце пути и путь, пройденный за время t с ускорением a  при v<sub>0</sub> = 0 <br> $$V=at$$ $$S=\\frac{at^2}{2}$$")
+    document.write("Ускорение = " + a + "<br>");
+    document.write("Время = " + t + "<br>");
+    document.write("Скорость в конце пути = " + (a * t).toFixed(4) + "<br>");
+    document.write("Путь = " + (a * t ** 2 / 2).toFixed(4) + "<br>");
+    document.write("Найти значение выражения:<br> $$b=\\sqrt{x+\\sqrt[4]{|y|}}+cos^2(z)$$")
+    document.write("При x = " + x + " y = " + y + " z = " + z + "<br>");
+    document.write("b = " + b.toFixed(4));
 </script>
 </body>
 </html>
