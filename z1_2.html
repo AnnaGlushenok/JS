@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Вычисление арифметических выражений</title>
+    <title>Глушенок Анна</title>
 </head>
 <body>
 <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -12,7 +12,7 @@
     let x = prompt("Введите x")
     let y = prompt("Введите y")
     let z = prompt("Введите z")
-    let b = (1 + Math.pow(Math.cos(x + z), 2)) / Math.abs(Math.pow(x, 3) - 2 * y * y)
+    let b = (1 + Math.pow(Math.cos(+x + +z), 2)) / Math.abs(Math.pow(+x, 3) - 2 * y * y)
     document.write("Найти площадь круга и длину окружности радиуса r по формулам:<br> $$S=\\pi*r^2$$ $$l = 2\\pi r$$")
     document.writeln("Радиус = " + r + "<br>");
     document.writeln("Площадь круга = " + (2 * Math.PI * r ** 2).toFixed(4) + "<br>");
