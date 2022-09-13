@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Глушенок Анна</title>
+</head>
+<body>
+<script>
+    let arr = []
+    for (let i = 0; i < 20; i++)
+        arr[i] = Math.round(Math.random() * 20);
+
+    document.write(`<p>${arr.join(" ")}</p>`)
+
+    let index = 0, max = arr[0];
+
+    for (let i = 1; i < arr.length - 1; i++)
+        if (arr[i] > max) {
+            max = arr[i]
+            index = i
+        }
+
+    [arr[index], arr[6]] = [arr[6], arr[index]];
+
+    document.write(`<p>${arr.join(" ")}</p>`)
+</script>
+</body>
+</html>

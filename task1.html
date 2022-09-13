@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Глушенок Анна</title>
+</head>
+<body>
+<script>
+    let treug = []
+    let kvd = []
+    for (let i = 1; i < 10; i++) {
+        treug[i] = i * (i + 1) / 2
+        kvd[i] = i ** 2
+    }
+
+    document.write(`<p>${treug.join("  ")}</p>`)
+    document.write(`<p>${kvd.join(" ")}</p>`)
+    let rez = treug.concat(kvd)
+    document.write(`<p>${rez.join(" ")}</p>`)
+    document.write(`<p>${rez.sort((a, b) => b - a).join(" ")}</p>`)
+</script>
+</body>
+</html>

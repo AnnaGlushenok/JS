@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Глушенок Анна</title>
+</head>
+<body>
+<script>
+    let arr = []
+    for (let i = 0; i < 20; i++)
+        arr[i] = Math.round(Math.random() * 40 - 20);
+
+    document.write(`<p>${arr.join(" ")}</p>`)
+
+    let x = prompt("Введите число")
+    document.write(`<p>Количество элементов меньше ${x} = ${arr.filter(el => el < x).length}</p>`)
+    document.write(`Произведение всех отрицательных чисел, стоящих на нечетных местах = ${arr.reduce((acc, val, i) =>
+        (i % 2 !== 0 && val < 0) ? acc * val : acc, 1
+    )}`)
+</script>
+</body>
+</html>

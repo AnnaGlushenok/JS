@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Глушенок Анна</title>
+</head>
+<body>
+<script>
+    let fruits = ["apple", "pineapple", "mango", "melon", "grape"],
+        citrus = ["orange", "lemon", "lime"]
+
+    document.write(`<p>fruits: ${fruits.join(" ")}</p>`)
+    document.write(`<p>citrus: ${citrus.join(" ")}</p>`)
+    document.write(`<p>fruits+citrus: ${citrus.concat(fruits).join(" ")}</p>`)
+    document.write(`<p>added fruits: ${fruits.slice(0,
+        fruits.indexOf('mango') + 1)
+        .concat(["pear", "cherry", "plum", "raspberry", "strawberry"]
+            .concat(fruits.slice(fruits.indexOf('mango'), fruits.length)))}</p>`)
+    document.write(`<p>deleted 3 elements: ${fruits.slice(0,fruits.length - 3 )}</p>`)
+    document.write(`<p>sorted: ${fruits.sort((a, b) => a.localeCompare(b))}</p>`)
+    document.write(`<p>sorted desc: ${fruits.sort((a, b) => b.localeCompare(a))}</p>`)
+    document.write(`<p>sorted length: ${fruits.sort((a, b) => a.length - b.length)}</p>`);
+</script>
+</body>
+</html>
