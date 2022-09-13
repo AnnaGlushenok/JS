@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Глушенок Анна</title>
+</head>
+<body>
+<script>
+    let str = "ehDrvi**iCCDDCDDcDkj*jk**DCkj*ljCo**iejced";
+
+    function findCD(str, regex) {
+        return str.match(regex).length;
+    }
+
+    function replace(str) {
+        return str.replaceAll("**", " ")
+    }
+
+    document.write(`<p>Исходная строка: ${str}</p>`)
+    document.write(`<p>Количество C = ${findCD(str, /C/g)}</p>`);
+    document.write(`<p>Количество D = ${findCD(str, /D/g)}</p>`);
+    document.write(`<p>Новая строка: ${replace(str)}</p>`)
+</script>
+</body>
+</html>

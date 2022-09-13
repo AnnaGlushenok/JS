@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Глушенок Анна</title>
+</head>
+<body>
+<script>
+    let str = prompt("Введите строку");
+    let answer = "";
+    for (let i = 0; i < str.length; i++) {
+        let symbol = str.charAt(i);
+        if (symbol === 'Я')
+            answer += 'А'
+        else if (symbol === 'я')
+            answer += 'а'
+        else if ((symbol > 'А' && symbol < 'Я') || (symbol > 'а' && symbol < 'я'))
+            answer += String.fromCharCode(str.charCodeAt(i) + 1);
+        else answer += symbol;
+    }
+    document.write(`<p>Исходная строка: ${str}</p>`)
+    document.write(`<p>Зашифрованая строка: ${answer}</p>`)
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Глушенок Анна</title>
+</head>
+<body>
+<script>
+    let str = "one two three           four five";
+
+    function insertStar(str) {
+        return "*" + str.split(/\s+/gi).join(" *");
+    }
+
+    function countWordsWithoutSymbol(str) {
+        return str.split(/\s+/gi).length - str.match(/\b\w*t\w*/gi).length;
+    }
+
+    document.write(`<p>Исходная строка: <pre>${str}</pre></p>`)
+    document.write(`<p>Звёздная строка: ${insertStar(str)}</p>`)
+    document.write(`<p>Количество слов без символа t: ${countWordsWithoutSymbol(str)}</p>`)
+</script>
+</body>
+</html>
