@@ -2,25 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Глушенок Анна</title>
-    <style>
-        body {
-            display: flex;
-            width: 100vw;
-            height: 100vh;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-    </style>
+    <title>Title</title>
+    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </head>
 <body>
 <script>
-    const b = (x, y, z) =>
-        Math.sqrt(x + Math.pow(Math.abs(y), 1 / 4)) + Math.cos(z) ** 2
-    document.write(`<img src="img.png" alt="formula"/>`)
-    document.write("b=" + b(+prompt("Введите x"), +prompt("Введите y"), +prompt("Введите z")))
-    document.write("<p>Я разраб!</p>")
+    let a = prompt("Введите ускорение a");
+    let t = prompt("Введите время t");
+
+    let speed = (a) => (t) => (a * t).toFixed(4);
+    let way = (a) => (t) => (a / 2 * t ** 2).toFixed(4);
+
+    document.write("Скорость в конце пути и путь, пройденный за время t с ускорением a  при v<sub>0</sub> = 0 <br> $$V=at$$ $$S=\\frac{at^2}{2}$$")
+    document.write("Ускорение = " + a + "<br>");
+    document.write("Время = " + t + "<br>");
+    document.write("Скорость в конце пути = " + speed(a)(t) + "<br>");
+    document.write("Путь = " + way(a)(t) + "<br>")
 </script>
 </body>
 </html>

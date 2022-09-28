@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Глушенок Анна</title>
+</head>
+<body>
+<script>
+    function ln(n, x, sum = 0) {
+        sum += Math.pow(-1, n) * Math.pow(x, n + 1) / (n + 1)
+        if (n > 0)
+            return ln(n - 1, x, sum)
+        return sum;
+    }
+
+    document.write("ln=" + ln(+prompt("Введите n"), +prompt("Введите x")))
+</script>
+</body>
+</html>

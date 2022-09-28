@@ -2,18 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Глушенок Анна</title>
+    <title>Title</title>
+    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </head>
 <body>
 <script>
-    function ln(n, x, sum = 0) {
-        sum += Math.pow(-1, n) * Math.pow(x, n + 1) / (n + 1)
-        if (n > 0)
-            return ln(n - 1, x, sum)
-        return sum;
-    }
+    let x = prompt("Введите x")
+    let y = prompt("Введите y")
+    let z = prompt("Введите z")
 
-    document.write("ln=" + ln(+prompt("Введите n"), +prompt("Введите x")))
+    let b = (x)=>(y)=>(z)=>
+        Math.sqrt(x + Math.pow(Math.abs(y), 1 / 4)) + Math.cos(z) ** 2
+
+    document.write("Найти значение выражения:<br> $$b=\\sqrt{x+\\sqrt[4]{|y|}}+cos^2(z)$$")
+    document.write(`При x = ${x} y = ${y}  z = ${z} <br>`);
+    document.write("b = " + b(x)(y)(z));
 </script>
 </body>
 </html>
