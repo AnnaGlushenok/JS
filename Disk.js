@@ -1,4 +1,4 @@
-class Disk {
+export class Disk {
     constructor(type, volume, visual, speed) {
         this._type = type;
         this._volume = volume;
@@ -46,35 +46,3 @@ class Disk {
 const disk = new Disk("SDD", 500, "SATA", 600);
 console.log("Disk:")
 disk.info()
-
-class SoldDisk extends Disk {
-    constructor(type, volume, visual, speed, data, cost) {
-        super(type, volume, visual, speed);
-        this._type = type;
-        this._speed = speed;
-        this._data = data;
-        this._cost = cost;
-    }
-
-    get data() {
-        return this._data;
-    }
-
-    get cost() {
-        return this._cost;
-    }
-
-    info() {
-        super.info()
-        console.log(`data: ${this.data}\ncost: ${this.cost}`)
-    }
-}
-
-let disks = [
-    new SoldDisk("HDD", 64, "SATA", 400, "25.07.2021", 4535),
-    new SoldDisk("SDD", 4, "SAS", 600, "17.08.2019", 1200),
-    new SoldDisk("HDD", 16, "USB", 800, "03.12.2022", 3570),
-    new SoldDisk("HDD", 32, "DISPLAY", 450, "10.04.2018", 6580),
-]
-document.write(1)
-createTable(disks)
