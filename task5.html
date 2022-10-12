@@ -13,7 +13,10 @@
         return sum;
     }
 
-    document.write("ln=" + ln(+prompt("Введите n"), +prompt("Введите x")))
+    let x = +prompt("Введите x")
+    document.write("ln=" + ln(+prompt("Введите n"), x))
+    document.write("Math.ln=" + Math.log1p(x))
+
 </script>
 </body>
 </html>
